@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.UserMapper">
+
+	<!--查询学生所有信息-->
+	<select id="findAll" resultType="com.example.springboot.bean.User">
+		select * from user
+	</select>
+
+	<!--根据学生id进行查询-->
+	<select id="selectById" resultType="com.example.springboot.bean.User">
+		select * from user where id=#{id}
+	</select>
+
+	<!--添加学生信息-->
+	<insert id="insert">
+		insert into user values (#{id} ,#{name} ,#{age} ,#{sex} ,#{tel})
+	</insert>
+
+	<!--删除学生信息-->
+	<delete id="deleteById">
+		delete from user where id=#{id}
+	</delete>
+
+
+	<!--修改学生信息-->
+	<update id="update">
+		update user set name=#{name} ,age=#{age} ,sex=#{sex} ,tel=#{tel} where id=#{id}
+	</update>
+</mapper>
