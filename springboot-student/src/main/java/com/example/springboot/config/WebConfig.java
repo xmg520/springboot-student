@@ -1,0 +1,24 @@
+package com.example.springboot.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+/**
+ * @author Yan
+ * @date 2019/6/9 18:25
+ */
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowedMethods("GET","POST","PUT","OPTIONS","DELETE","PATCH")
+                .allowedHeaders("*")
+                .allowCredentials(true)
+                .maxAge(3600);
+    }
+
+}

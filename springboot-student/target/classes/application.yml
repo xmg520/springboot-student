@@ -1,3 +1,5 @@
+
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -32,3 +34,5 @@ spring:
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
+server:
+  port: 8888
